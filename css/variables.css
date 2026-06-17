@@ -1,30 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,300&family=Questrial&display=swap');
 
 :root {
-  /* Premium Matte Luxury Editorial Tone Palette */
-  --color-brand: #000000;            /* Deep dynamic pitch black */
-  --color-brand-hover: #1d1d1f;      /* Sleek dark slate hover shadow */
-  --color-space-black: #141414;      /* High-end core typography color */
-  --color-slate: #424245;            /* Refined mid-tone descriptive gray */
-  --color-gunmetal: #6e6e73;         /* Balanced placeholder outline tint */
-  --color-fog: #86868b;              /* Premium concrete gray descriptor accent */
-  --color-pure-white: #ffffff;       /* Solid white structural surface panels */
-  --color-mist: #faf7f4;             /* Luxury matte cream container background canvas */
-  --color-silver: #e5ded7;           /* Elegant razor-thin graphic divider lines */
-  --color-cloud: #f1ebd8;            /* Smooth image block backing shade */
+  /* Premium Minimalist Luxury Dark Matte Palette */
+  --color-brand: #000000;            
+  --color-brand-hover: #1d1d1f;      
+  --color-space-black: #141414;      
+  --color-slate: #313131;            
+  --color-gunmetal: #444545;         
+  --color-fog: #6b6c6c;              
+  --color-pure-white: #ffffff;       
+  --color-mist: #f6f6f6;             
+  --color-silver: #e8e8ed;           
+  --color-cloud: #dedfe2;            
 
-  /* Premium High-End Luxury Typography Settings */
-  --font-sf-pro-text: "Questrial", "Inter", sans-serif;
+  /* Typography Stacks */
+  --font-sf-pro-text: "Questrial", sans-serif;
   --font-sf-pro-display: "Barlow Condensed", sans-serif;
   
-  --text-caption: 11px;
-  --leading-caption: 1.4;
-  --text-body-sm: 13px;
-  --leading-body-sm: 1.5;
-  --text-body: 15px;
-  --leading-body: 1.6;
-  --text-body-lg: 19px;
-  --leading-body-lg: 1.5;
+  --text-caption: 12px;
+  --leading-caption: 1.33;
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.43;
+  --text-body: 16px;
+  --leading-body: 1.5;
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.4;
   --text-heading: 42px;
   --leading-heading: 1.05;
   --text-heading-lg: 54px;
@@ -39,5 +39,4 @@
   --radius-cards: 0px;
   --radius-inputs: 0px;
   --radius-buttons: 0px;
-  --shadow-subtle: rgba(0, 0, 0, 0.02) 0px 4px 20px;
 }
