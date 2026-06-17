@@ -173,12 +173,14 @@ img {
 }
 
 /* Luxury semi-dark overlay tint to make sure text remains highly readable over moving footage */
-.hero-left-billboard.video-bg-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* Tint adjustments depending on video brightness */
-  z-index: 2;
+.hero-left-billboard.video-bg-container {
+  position: relative;
+  overflow: hidden;
+  background: #1a1512; /* Rich dark espresso color instead of plain black */
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Push typography layers above background frames */
