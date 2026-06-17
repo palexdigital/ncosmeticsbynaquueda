@@ -62,15 +62,15 @@ img {
   align-items: center;
   gap: 14px;
   font-family: var(--font-sf-pro-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 .brand img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: cover;
 }
 
@@ -141,75 +141,66 @@ img {
   font-size: 11px;
 }
 
-/* Luxury Triple Image Grid Layout */
+/* Fenty Beauty Luxury Editorial Triple Image-Video Layout */
 .hero-editorial-triple {
   width: min(100% - 40px, var(--page-max-width));
   margin: 50px auto var(--section-gap) auto;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 24px;
 }
 
-/* Container adjustment for stacking layers */
 .hero-left-billboard.video-bg-container {
   position: relative;
   overflow: hidden;
-  background: #000000; /* Dark baseline fill while video loads */
+  background: #000000;
   padding: 80px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 580px;
 }
 
-/* Absolute video fit matching the frame aspect ratio cover */
 .billboard-video-player {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Keeps aspect crop looking identical to a background image */
+  object-fit: cover;
   z-index: 1;
 }
 
-/* Luxury semi-dark overlay tint to make sure text remains highly readable over moving footage */
-.hero-left-billboard.video-bg-container {
-  position: relative;
-  overflow: hidden;
-  background: #1a1512; /* Rich dark espresso color instead of plain black */
-  padding: 80px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.hero-left-billboard.video-bg-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
 
-/* Push typography layers above background frames */
 .billboard-content {
   position: relative;
   z-index: 3;
 }
 
-/* Turn text to white so it contrasts beautifully against video motion graphics */
 .billboard-content h1 {
-  color: var(--color-pure-white);
   font-family: var(--font-sf-pro-display);
-  font-size: clamp(38px, 4.2vw, 62px);
-  line-height: 0.95;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.02;
   font-weight: 300;
-  margin: 0 0 28px 0;
+  margin: 0 0 24px 0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.billboard-content .eyebrow {
-  color: #e5ded7; /* Soft gold/silver hue tint for crisp readability */
+  letter-spacing: 0.06em;
+  color: var(--color-pure-white);
 }
 
 .billboard-content .hero-desc {
   margin: 0 0 40px 0;
-  color: #faf7f4; /* Muted clean white paragraph text */
+  color: #e5ded7;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
 .hero-right-gallery {
@@ -221,22 +212,22 @@ img {
 .hero-gallery-img {
   width: 100%;
   height: 100%;
-  min-height: 540px;
+  min-height: 280px;
   object-fit: cover;
   background: var(--color-cloud);
 }
 
 .hero-gallery-img.span-two {
   grid-column: span 2;
-  min-height: 300px;
+  min-height: 280px;
 }
 
 .pill-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-brand);
-  color: var(--color-pure-white);
+  background: var(--color-pure-white);
+  color: var(--color-brand);
   padding: 16px 36px;
   font-family: var(--font-sf-pro-display);
   font-size: 13px;
@@ -252,9 +243,14 @@ img {
   opacity: 0.85;
 }
 
-.pill-button.small {
-  padding: 10px 18px;
-  font-size: 11px;
+.eyebrow {
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  font-family: var(--font-sf-pro-display);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  color: #f1ebd8;
 }
 
 /* Category Strip Section */
@@ -269,7 +265,7 @@ img {
 .inspo-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   background: var(--color-cloud);
 }
 
@@ -277,32 +273,21 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.inspo-card:hover img {
-  transform: scale(1.04);
 }
 
 .inspo-overlay-link {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: flex-end;
-  padding: 24px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.inspo-card:hover .inspo-overlay-link {
-  opacity: 1;
+  padding: 20px;
 }
 
 .inspo-overlay-link span {
   color: var(--color-pure-white);
   font-family: var(--font-sf-pro-display);
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border-bottom: 1px solid var(--color-pure-white);
@@ -367,11 +352,11 @@ img {
   outline: none;
 }
 
-/* Product Cards */
+/* Product Cards Grid Structure */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 48px 24px;
+  gap: 40px 20px;
 }
 
 .product-card {
@@ -400,7 +385,7 @@ img {
 
 .image-slots-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--color-silver);
   border-top: 1px solid var(--color-silver);
@@ -450,105 +435,16 @@ img {
 
 .product-actions {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.ghost-button {
-  background: none;
-  border: 1px solid var(--color-brand);
-  color: var(--color-brand);
-  padding: 8px 16px;
-  font-family: var(--font-sf-pro-display);
+.product-actions .pill-button {
+  background: var(--color-brand);
+  color: var(--color-pure-white);
+  width: 100%;
+  padding: 12px;
   font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-}
-
-/* Founder Profile Row Block */
-.ceo-profile-section {
-  background: #f3eae1;
-  padding: 96px 0;
-  border-top: 1px solid var(--color-silver);
-  border-bottom: 1px solid var(--color-silver);
-  margin-bottom: var(--section-gap);
-}
-
-.ceo-container {
-  width: min(100% - 40px, var(--page-max-width));
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.ceo-images-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.ceo-primary-portrait {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border: 10px solid var(--color-pure-white);
-}
-
-.ceo-meta-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.ceo-meta-links img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.ceo-content-block h2 {
-  font-family: var(--font-sf-pro-display);
-  font-size: 46px;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin: 0 0 10px 0;
-  letter-spacing: 0.1em;
-}
-
-.ceo-title-tag {
-  font-family: var(--font-sf-pro-display);
-  font-size: 14px;
-  color: var(--color-fog);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin-bottom: 28px;
-  display: block;
-}
-
-.ceo-bio {
-  color: var(--color-slate);
-  line-height: 1.75;
-  font-size: 15px;
-  margin-bottom: 40px;
-}
-
-.eyebrow {
-  margin: 0 0 16px 0;
-  text-transform: uppercase;
-  font-family: var(--font-sf-pro-display);
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  font-weight: 400;
-  color: var(--color-gunmetal);
-}
-
-.social-button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 }
 
 /* Modals & Cart Flyout Panels */
@@ -608,7 +504,7 @@ img {
   font-family: var(--font-sf-pro-display); font-size: 20px; text-transform: uppercase; letter-spacing: 0.08em;
 }
 
-.cart-purchase { width: 100%; text-align: center; }
+.cart-purchase { width: 100%; text-align: center; background: var(--color-brand) !important; color: var(--color-pure-white) !important;}
 
 dialog {
   border: none; padding: 0; max-width: min(100% - 32px, 880px); width: 100%;
@@ -629,36 +525,31 @@ dialog {
 
 .spec-list { padding-left: 20px; margin: 24px 0; color: var(--color-slate); line-height: 1.8; }
 
-/* Site Footer & Credit Buttons */
+/* Site Footer */
 .site-footer {
   background: var(--color-brand);
   color: #c9bcbc;
-  padding: 80px 20px 48px 20px;
+  padding: 60px 20px;
   font-size: var(--text-caption);
   text-align: center;
   border-top: 1px solid var(--color-brand-hover);
 }
 
-.footer-container {
-  width: min(100%, var(--page-max-width));
-  margin: 0 auto;
-}
-
-.footer-container strong {
+.site-footer strong {
   font-family: var(--font-sf-pro-display);
   font-size: 18px;
   letter-spacing: 0.15em;
   color: var(--color-pure-white);
+  text-transform: uppercase;
 }
 
-.footer-container p {
-  margin: 12px 0 32px 0;
+.site-footer p {
+  margin: 12px 0 24px 0;
   opacity: 0.7;
 }
 
-.credit-pill-btn {
+.developer-credit {
   display: inline-flex;
-  align-items: center;
   background: #1a1a1a;
   color: var(--color-pure-white);
   padding: 10px 24px;
@@ -667,20 +558,12 @@ dialog {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid #2d2d2d;
-  transition: all 0.25s ease;
-}
-
-.credit-pill-btn:hover {
-  background: var(--color-pure-white);
-  color: var(--color-brand);
-  border-color: var(--color-pure-white);
 }
 
 @media (max-width: 980px) {
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-editorial-triple { grid-template-columns: 1fr; }
-  .hero-gallery-img { min-height: 400px; }
-  .ceo-container { grid-template-columns: 1fr; gap: 48px; }
+  .hero-left-billboard.video-bg-container { min-height: 460px; padding: 40px; }
 }
 
 @media (max-width: 760px) {
@@ -694,5 +577,4 @@ dialog {
   .toolbar { grid-template-columns: 1fr; }
   .inspo-gallery-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .product-detail { grid-template-columns: 1fr; }
-  .hero-left-billboard { padding: 48px 24px; }
 }
