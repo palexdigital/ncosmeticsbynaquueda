@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,300&family=Questrial&display=swap');
 
 :root {
-  /* Premium Matte Luxury Editorial Nudes & Deep Espressos */
-  --color-brand: #000000;            /* Pitch black for ultra high-contrast typography */
-  --color-brand-hover: #2d241d;      /* Deep roasted earth shadow */
-  --color-space-black: #141414;      /* Neutral rich dynamic dark text color */
-  --color-slate: #5a5149;            /* Luxurious dark warm taupe */
-  --color-gunmetal: #7a7067;         /* Soft earth shadow gray */
-  --color-fog: #94887e;              /* Light concrete gray descriptors */
-  --color-pure-white: #ffffff;       /* Spotless background panels */
-  --color-mist: #faf7f4;             /* Creamy matte warm canvas background */
-  --color-silver: #e5ded7;           /* Minimal razor-thin border accents */
-  --color-cloud: #f1ebd8;            /* Soft placeholder background block backing */
+  /* Premium Matte Luxury Editorial Tone Palette */
+  --color-brand: #000000;            /* Deep dynamic pitch black */
+  --color-brand-hover: #1d1d1f;      /* Sleek dark slate hover shadow */
+  --color-space-black: #141414;      /* High-end core typography color */
+  --color-slate: #424245;            /* Refined mid-tone descriptive gray */
+  --color-gunmetal: #6e6e73;         /* Balanced placeholder outline tint */
+  --color-fog: #86868b;              /* Premium concrete gray descriptor accent */
+  --color-pure-white: #ffffff;       /* Solid white structural surface panels */
+  --color-mist: #faf7f4;             /* Luxury matte cream container background canvas */
+  --color-silver: #e5ded7;           /* Elegant razor-thin graphic divider lines */
+  --color-cloud: #f1ebd8;            /* Smooth image block backing shade */
 
-  /* Luxury Fenty Aesthetic Type Settings */
+  /* Premium High-End Luxury Typography Settings */
   --font-sf-pro-text: "Questrial", "Inter", sans-serif;
   --font-sf-pro-display: "Barlow Condensed", sans-serif;
   
@@ -33,8 +33,8 @@
   --font-weight-regular: 300;
   --font-weight-semibold: 400;
   --page-max-width: 1240px;
-  --section-gap: 96px;
-  --card-padding: 48px;
+  --section-gap: 80px;
+  --card-padding: 40px;
   --radius-nav: 0px;
   --radius-cards: 0px;
   --radius-inputs: 0px;
