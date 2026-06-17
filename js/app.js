@@ -1,65 +1,49 @@
 const storeLinks = {
-  yagaStore: "#",
-  contact: "#",
-  defaultContact: "#",
-  purchase: "#"
+  yagaStore: "https://www.instagram.com/ncosmeticsbynaquueda/",
+  contact: "https://www.instagram.com/ncosmeticsbynaquueda/",
+  purchase: "https://www.instagram.com/ncosmeticsbynaquueda/"
 };
 
-const imageLibrary = {
-  highShine: [
-    "https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80"
-  ],
-  lipOil: [
-    "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=900&q=80"
-  ],
-  shimmer: [
-    "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=900&q=80"
-  ]
-};
-
+// Premium high-res editable product photography array assignments
 const products = [
   {
-    id: "crystal-clear",
-    name: "Glass Tint Crystal Clear",
-    category: "High-Shine Gloss",
-    price: 220,
-    images: imageLibrary.highShine,
-    buyUrl: storeLinks.yagaStore,
-    description: "The ultimate hyper-reflective high-shine sheer experience.",
-    specs: ["Infused with Rosehip Extract", "Non-sticky comfort feel", "Hypoallergenic", "Long-wear mirror finish"]
-  },
-  {
-    id: "rose-elixir",
-    name: "Revitalizing Rose Elixir Oil",
-    category: "Nourishing Lip Oil",
-    price: 250,
-    images: imageLibrary.lipOil,
-    buyUrl: storeLinks.yagaStore,
-    description: "Deep conditioning treatment with a lovely blushing pink tint.",
-    specs: ["Organic Pure Jojoba Base", "Intense skin cell repair", "Natural light scent", "Satin glow effect"]
-  },
-  {
-    id: "golden-dust",
-    name: "Golden Dust Diamond Shimmer",
-    category: "Shimmer Topper",
+    id: "nude-bomb-gloss",
+    name: "Signature Bomb Nude Gloss",
+    category: "Lip Gloss Finishes",
     price: 240,
-    images: imageLibrary.shimmer,
+    images: [
+      "https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80" // Secondary angle slot
+    ],
     buyUrl: storeLinks.yagaStore,
-    description: "Multi-dimensional gold micro-pearls that reflect incoming lighting elegantly.",
-    specs: ["Reflective glass mineral beads", "Wear alone or as top coat", "Vanilla infused balm balm", "Comfort cloud applicator"]
+    description: "The crown jewel of our collection. A high-reflectance glass finish that cushions lips in comfortable warm nude hues.",
+    specs: ["Vitamin E infused", "Non-sticky shine layer", "Long-lasting weightless cushion", "Vanilla orchid scent"]
   },
   {
-    id: "velvet-mauve",
-    name: "Velvet Mauve Plumping Balm",
-    category: "High-Shine Gloss",
+    id: "hydrating-lip-oil",
+    name: "Rose Infused Treatment Elixir",
+    category: "Nourishing Lip Oils",
     price: 260,
-    images: imageLibrary.highShine,
+    images: [
+      "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=900&q=80" // Swatch/packaging detail slot
+    ],
     buyUrl: storeLinks.yagaStore,
-    description: "A gorgeous deep warm tint with deep structural plumping hydration.",
-    specs: ["Peptide enriched serum base", "Slight tingling sensation", "Sober elegant tone", "Moisture locking shield"]
+    description: "Deep skin barrier conditioning layer that shifts with your natural pH level to form a bespoke blush finish.",
+    specs: ["Pure botanical oil base", "Protects against dehydration", "Satin tint glow look", "Dermatologically checked"]
+  },
+  {
+    id: "diamond-shimmer-coat",
+    name: "Glow Dust Metallic Top-Coat",
+    category: "Shimmer Toppers",
+    price: 280,
+    images: [
+      "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=900&q=80"
+    ],
+    buyUrl: storeLinks.yagaStore,
+    description: "Finely milled mineral diamond dust suspended in a high-gloss base. Wear alone or stack over your favorite lip liner.",
+    specs: ["Reflective mineral particles", "Zero grit texture comfort", "Plumping finish illusion", "Vegan formulation"]
   }
 ];
 
@@ -70,7 +54,7 @@ const currency = new Intl.NumberFormat("en-ZA", {
 });
 
 const state = {
-  cart: JSON.parse(localStorage.getItem("luxeglowCart") || "[]"),
+  cart: JSON.parse(localStorage.getItem("ncosmeticsCart") || "[]"),
   search: "",
   category: "all",
   sort: "featured",
@@ -90,31 +74,16 @@ const productDialog = document.querySelector("[data-product-dialog]");
 const productDetail = document.querySelector("[data-product-detail]");
 
 function saveCart() {
-  localStorage.setItem("luxeglowCart", JSON.stringify(state.cart));
+  localStorage.setItem("ncosmeticsCart", JSON.stringify(state.cart));
 }
 
 function formatPrice(value) {
   return currency.format(value).replace("ZAR", "R");
 }
 
-function primaryImage(product) {
-  return product.images[0];
-}
-
-function getCartProduct(item) {
-  return products.find((product) => product.id === item.id);
-}
-
-function cartTotalValue() {
-  return state.cart.reduce((total, item) => {
-    const product = getCartProduct(item);
-    return product ? total + product.price : total;
-  }, 0);
-}
-
 function renderCategories() {
-  const categories = [...new Set(products.map((product) => product.category))];
-  categories.forEach((category) => {
+  const categories = [...new Set(products.map(p => p.category))];
+  categories.forEach(category => {
     const option = document.createElement("option");
     option.value = category;
     option.textContent = category;
@@ -123,37 +92,38 @@ function renderCategories() {
 }
 
 function renderProducts() {
-  let visibleProducts = products.filter((product) => {
-    const matchesSearch = [product.name, product.category, product.description].join(" ").toLowerCase().includes(state.search.toLowerCase());
-    const matchesCategory = state.category === "all" || product.category === state.category;
-    return matchesSearch && matchesCategory;
+  let visible = products.filter(p => {
+    const textMatch = [p.name, p.category, p.description].join(" ").toLowerCase().includes(state.search.toLowerCase());
+    const catMatch = state.category === "all" || p.category === state.category;
+    return textMatch && catMatch;
   });
 
-  visibleProducts = [...visibleProducts].sort((a, b) => {
-    if (state.sort === "price-low") return a.price - b.price;
-    if (state.sort === "price-high") return b.price - a.price;
-    if (state.sort === "name") return a.name.localeCompare(b.name);
-    return products.indexOf(a) - products.indexOf(b);
-  });
+  if (state.sort === "price-low") visible.sort((a,b) => a.price - b.price);
+  else if (state.sort === "price-high") visible.sort((a,b) => b.price - a.price);
+  else if (state.sort === "name") visible.sort((a,b) => a.name.localeCompare(b.name));
 
-  if (!visibleProducts.length) {
-    productGrid.innerHTML = '<div class="empty-state"><h3>No products found.</h3><p>Try a different search query or filter finish.</p></div>';
+  if (!visible.length) {
+    productGrid.innerHTML = '<div class="empty-state"><h3>No items found in this drop.</h3></div>';
     return;
   }
 
-  productGrid.innerHTML = visibleProducts.map((product) => `
+  productGrid.innerHTML = visible.map(product => `
     <article class="product-card">
-      <button class="product-media" type="button" data-view-product="${product.id}" aria-label="View ${product.name} details">
-        <img src="${primaryImage(product)}" alt="${product.name}">
-        <span class="save-dot" aria-hidden="true">&#9825;</span>
+      <button class="product-media" type="button" data-view-product="${product.id}">
+        <img src="${product.images[0]}" id="main-img-${product.id}" alt="${product.name}">
       </button>
+      
+      <div class="image-slots-row">
+        <img class="slot-thumb" src="${product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[0]}'" alt="View 1">
+        <img class="slot-thumb" src="${product.images[1] || product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[1] || product.images[0]}'" alt="View 2">
+      </div>
+
       <div class="product-copy">
         <h3>${product.name}</h3>
         <p>${product.category}</p>
         <strong class="product-price">${formatPrice(product.price)}</strong>
         <div class="product-actions">
           <button class="pill-button small" type="button" data-add-to-cart="${product.id}">Add to bag</button>
-          <a class="pill-button small" href="${product.buyUrl}">Buy</a>
           <button class="ghost-button" type="button" data-view-product="${product.id}">Details</button>
         </div>
       </div>
@@ -163,90 +133,64 @@ function renderProducts() {
 
 function renderCart() {
   const count = state.cart.length;
-  document.querySelectorAll("[data-cart-count]").forEach((item) => {
-    item.textContent = count;
-  });
+  document.querySelectorAll("[data-cart-count]").forEach(el => el.textContent = count);
 
-  if (!state.cart.length) {
-    cartItems.innerHTML = '<div class="empty-state"><h3>Your bag is empty.</h3><p>Select products from our catalog grid.</p></div>';
+  if (!count) {
+    cartItems.innerHTML = '<p style="text-align:center; color:var(--color-fog);">Your shopping bag is completely empty.</p>';
   } else {
-    cartItems.innerHTML = state.cart.map((item) => {
-      const product = getCartProduct(item);
-      if (!product) return "";
+    cartItems.innerHTML = state.cart.map(item => {
+      const p = products.find(prod => prod.id === item.id);
+      if (!p) return "";
       return `
         <article class="cart-item">
-          <img src="${primaryImage(product)}" alt="${product.name}">
+          <img src="${p.images[0]}" alt="${p.name}">
           <div>
-            <h3>${product.name}</h3>
-            <p>${formatPrice(product.price)}</p>
-            <a href="${product.buyUrl}">View item link</a>
+            <h4 style="margin:0; font-size:14px;">${p.name}</h4>
+            <p style="margin:4px 0 0 0; font-weight:bold;">${formatPrice(p.price)}</p>
           </div>
-          <button class="remove-x" type="button" data-remove="${product.id}" aria-label="Remove ${product.name}">&times;</button>
+          <button class="remove-x" type="button" data-remove="${p.id}">&times;</button>
         </article>
       `;
     }).join("");
   }
 
-  cartTotal.textContent = formatPrice(cartTotalValue());
+  const total = state.cart.reduce((acc, item) => acc + (products.find(p => p.id === item.id)?.price || 0), 0);
+  cartTotal.textContent = formatPrice(total);
   purchaseButton.href = storeLinks.purchase;
-  purchaseButton.classList.toggle("disabled", !state.cart.length);
+  purchaseButton.classList.toggle("disabled", !count);
   saveCart();
 }
 
 function addToCart(id) {
-  if (!state.cart.some((item) => item.id === id)) {
-    state.cart.push({ id });
-  }
+  if (!state.cart.some(item => item.id === id)) state.cart.push({ id });
   renderCart();
-  openCart();
-}
-
-function openCart() {
   cartPanel.classList.add("open");
-  cartPanel.setAttribute("aria-hidden", "false");
   document.body.classList.add("cart-open");
 }
 
-function closeCart() {
-  cartPanel.classList.remove("open");
-  cartPanel.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("cart-open");
-}
-
-function changeProductImage(amount) {
-  const product = products.find((item) => item.id === state.activeProductId);
-  if (!product) return;
-  state.activeImageIndex = (state.activeImageIndex + amount + product.images.length) % product.images.length;
-  showProduct(product.id, state.activeImageIndex);
-}
-
-function showProduct(id, imageIndex = 0) {
-  const product = products.find((item) => item.id === id);
+function showProduct(id, idx = 0) {
+  const product = products.find(p => p.id === id);
   if (!product) return;
   state.activeProductId = id;
-  state.activeImageIndex = imageIndex;
+  state.activeImageIndex = idx;
+
   productDetail.innerHTML = `
     <article class="product-detail">
       <div class="gallery">
-        <img src="${product.images[imageIndex]}" alt="${product.name}">
+        <img src="${product.images[idx]}" alt="${product.name}">
         <div class="gallery-controls">
-          <button type="button" data-gallery-prev aria-label="Previous photo">&#8249;</button>
-          <span>${imageIndex + 1} / ${product.images.length}</span>
-          <button type="button" data-gallery-next aria-label="Next photo">&#8250;</button>
+          <button type="button" onclick="changeImage(-1)">‹</button>
+          <span>${idx + 1} / ${product.images.length}</span>
+          <button type="button" onclick="changeImage(1)">›</button>
         </div>
       </div>
       <div>
-        <p class="eyebrow dark">${product.category}</p>
+        <p class="eyebrow">${product.category}</p>
         <h2>${product.name}</h2>
         <p>${product.description}</p>
-        <ul class="spec-list">
-          ${product.specs.map((spec) => `<li>${spec}</li>`).join("")}
-        </ul>
+        <ul class="spec-list">${product.specs.map(s => `<li>${s}</li>`).join("")}</ul>
         <strong class="product-price">${formatPrice(product.price)}</strong>
-        <div class="product-actions">
-          <button class="pill-button" type="button" data-add-to-cart="${product.id}">Add to bag</button>
-          <a class="pill-button" href="${product.buyUrl}">Buy item</a>
-        </div>
+        <button class="pill-button" type="button" data-add-to-cart="${product.id}">Add to bag</button>
       </div>
     </article>
   `;
@@ -254,24 +198,22 @@ function showProduct(id, imageIndex = 0) {
   document.body.classList.add("dialog-open");
 }
 
-function closeProductDialog() {
-  productDialog.close();
-  document.body.classList.remove("dialog-open");
-}
+window.changeImage = function(step) {
+  const p = products.find(prod => prod.id === state.activeProductId);
+  if (!p) return;
+  let nextIdx = (state.activeImageIndex + step + p.images.length) % p.images.length;
+  showProduct(p.id, nextIdx);
+};
 
-document.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add-to-cart]");
-  const viewButton = event.target.closest("[data-view-product]");
-  const removeButton = event.target.closest("[data-remove]");
-  const previousButton = event.target.closest("[data-gallery-prev]");
-  const nextButton = event.target.closest("[data-gallery-next]");
+document.addEventListener("click", event => {
+  const add = event.target.closest("[data-add-to-cart]");
+  const view = event.target.closest("[data-view-product]");
+  const rem = event.target.closest("[data-remove]");
 
-  if (addButton) addToCart(addButton.dataset.addToCart);
-  if (viewButton) showProduct(viewButton.dataset.viewProduct);
-  if (previousButton) changeProductImage(-1);
-  if (nextButton) changeProductImage(1);
-  if (removeButton) {
-    state.cart = state.cart.filter((item) => item.id !== removeButton.dataset.remove);
+  if (add) addToCart(add.dataset.addToCart);
+  if (view) showProduct(view.dataset.viewProduct);
+  if (rem) {
+    state.cart = state.cart.filter(i => i.id !== rem.dataset.remove);
     renderCart();
   }
 });
@@ -281,36 +223,28 @@ document.querySelector("[data-open-search]").addEventListener("click", () => {
   searchInput.focus();
 });
 
-document.querySelectorAll("[data-open-cart]").forEach((button) => button.addEventListener("click", openCart));
-document.querySelectorAll("[data-close-cart]").forEach((button) => button.addEventListener("click", closeCart));
-document.querySelector("[data-close-product]").addEventListener("click", closeProductDialog);
+document.querySelectorAll("[data-open-cart]").forEach(b => b.addEventListener("click", () => {
+  cartPanel.classList.add("open");
+  document.body.classList.add("cart-open");
+}));
 
-searchInput.addEventListener("input", (event) => {
-  state.search = event.target.value;
-  renderProducts();
+document.querySelectorAll("[data-close-cart]").forEach(b => b.addEventListener("click", () => {
+  cartPanel.classList.remove("open");
+  document.body.classList.remove("cart-open");
+}));
+
+document.querySelector("[data-close-product]").addEventListener("click", () => {
+  productDialog.close();
+  document.body.classList.remove("dialog-open");
 });
 
-categoryFilter.addEventListener("change", (event) => {
-  state.category = event.target.value;
-  renderProducts();
-});
+searchInput.addEventListener("input", e => { state.search = e.target.value; renderProducts(); });
+categoryFilter.addEventListener("change", e => { state.category = e.target.value; renderProducts(); });
+sortFilter.addEventListener("change", e => { state.sort = e.target.value; renderProducts(); });
 
-sortFilter.addEventListener("change", (event) => {
-  state.sort = event.target.value;
-  renderProducts();
-});
-
-document.querySelector(".nav-toggle").addEventListener("click", (event) => {
-  const navLinks = document.querySelector("#primary-nav");
-  const isOpen = navLinks.classList.toggle("open");
-  event.currentTarget.setAttribute("aria-expanded", String(isOpen));
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeCart();
-    if (productDialog.open) closeProductDialog();
-  }
+document.querySelector(".nav-toggle").addEventListener("click", e => {
+  const isOpen = document.querySelector("#primary-nav").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", String(isOpen));
 });
 
 renderCategories();
