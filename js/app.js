@@ -1,205 +1,68 @@
-// EDIT STORE METADATA LINKS HERE
 const storeLinks = {
-  yagaStore: "https://www.yaga.co.za/richendor-general-trading",
-  contact: "https://www.yaga.co.za/my/messages/orieukwu-richard",
-  defaultContact: "#contact-link-to-edit",
-  purchase: "https://www.yaga.co.za/orieukwu-richard"
+  yagaStore: "#",
+  contact: "#",
+  defaultContact: "#",
+  purchase: "#"
 };
 
-// STOCK IMAGES LIBRARY POOL
 const imageLibrary = {
-  ipad: [
-    "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1561154464-82e9adf32764?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&w=900&q=80"
+  highShine: [
+    "https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=900&q=80",
+    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80"
   ],
-  iphone: [
-    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=900&q=80"
+  lipOil: [
+    "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?auto=format&fit=crop&w=900&q=80",
+    "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=900&q=80"
   ],
-  macbook: [
-    "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=900&q=80"
-  ],
-  airpods: [
-    "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1610438235354-a6ae5528385c?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=900&q=80"
-  ],
-  accessories: [
-    "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=900&q=80"
+  shimmer: [
+    "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=900&q=80",
+    "https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=900&q=80"
   ]
 };
 
-// EASILY MANAGE PRODUCTS DIRECTLY ON GITHUB VIA THIS ARRAY MATRIX
 const products = [
   {
-    id: "ipad-9th-gen-blue",
-    name: "iPad 9th Gen 64GB Wi-Fi",
-    category: "iPad",
-    price: 5500,
-    images: imageLibrary.ipad,
+    id: "crystal-clear",
+    name: "Glass Tint Crystal Clear",
+    category: "High-Shine Gloss",
+    price: 220,
+    images: imageLibrary.highShine,
     buyUrl: storeLinks.yagaStore,
-    description: "Clean iPad with a bright display, ideal for study, streaming, and daily use.",
-    specs: ["64GB storage", "Wi-Fi model", "Good battery health", "Ready for setup"]
+    description: "The ultimate hyper-reflective high-shine sheer experience.",
+    specs: ["Infused with Rosehip Extract", "Non-sticky comfort feel", "Hypoallergenic", "Long-wear mirror finish"]
   },
   {
-    id: "iphone-boxed-bundle",
-    name: "iPhone Boxed Bundle",
-    category: "iPhone",
-    price: 9500,
-    images: imageLibrary.iphone,
+    id: "rose-elixir",
+    name: "Revitalizing Rose Elixir Oil",
+    category: "Nourishing Lip Oil",
+    price: 250,
+    images: imageLibrary.lipOil,
     buyUrl: storeLinks.yagaStore,
-    description: "iPhone package with accessories, presented in excellent condition.",
-    specs: ["Box included", "Accessories included", "Tested device", "Ready to use"]
+    description: "Deep conditioning treatment with a lovely blushing pink tint.",
+    specs: ["Organic Pure Jojoba Base", "Intense skin cell repair", "Natural light scent", "Satin glow effect"]
   },
   {
-    id: "iphone-green",
-    name: "iPhone Green Edition",
-    category: "iPhone",
-    price: 5500,
-    images: imageLibrary.iphone,
+    id: "golden-dust",
+    name: "Golden Dust Diamond Shimmer",
+    category: "Shimmer Topper",
+    price: 240,
+    images: imageLibrary.shimmer,
     buyUrl: storeLinks.yagaStore,
-    description: "Compact iPhone with a clean finish and everyday performance.",
-    specs: ["Unlocked", "Quality checked", "Good screen condition", "Charging tested"]
+    description: "Multi-dimensional gold micro-pearls that reflect incoming lighting elegantly.",
+    specs: ["Reflective glass mineral beads", "Wear alone or as top coat", "Vanilla infused balm balm", "Comfort cloud applicator"]
   },
   {
-    id: "macbook-blue-wallpaper",
-    name: "MacBook Pro 13-inch",
-    category: "MacBook",
-    price: 9500,
-    images: imageLibrary.macbook,
+    id: "velvet-mauve",
+    name: "Velvet Mauve Plumping Balm",
+    category: "High-Shine Gloss",
+    price: 260,
+    images: imageLibrary.highShine,
     buyUrl: storeLinks.yagaStore,
-    description: "Reliable MacBook for school, business, and creative everyday work.",
-    specs: ["13-inch display", "macOS ready", "Charger available", "Performance tested"]
-  },
-  {
-    id: "iphone-accessory-remote",
-    name: "iPhone With Accessories",
-    category: "iPhone",
-    price: 12000,
-    images: imageLibrary.iphone,
-    buyUrl: storeLinks.yagaStore,
-    description: "Premium iPhone package with accessories for a complete setup.",
-    specs: ["Accessories included", "Unlocked", "Inspected condition", "Ready for collection"]
-  },
-  {
-    id: "airtag-set",
-    name: "Apple AirTag Set",
-    category: "Accessories",
-    price: 1200,
-    images: imageLibrary.accessories,
-    buyUrl: storeLinks.yagaStore,
-    description: "Apple tracking accessories for bags, keys, and everyday essentials.",
-    specs: ["Compact tracker", "Apple Find My support", "Easy setup", "Portable accessory"]
-  },
-  {
-    id: "macbook-stage-light",
-    name: "MacBook Air Bundle",
-    category: "MacBook",
-    price: 10500,
-    images: imageLibrary.macbook,
-    buyUrl: storeLinks.yagaStore,
-    description: "Slim MacBook option for work, browsing, email, and study.",
-    specs: ["Lightweight body", "macOS ready", "Keyboard tested", "Charger available"]
-  },
-  {
-    id: "iphone-box",
-    name: "iPhone Boxed Deal",
-    category: "iPhone",
-    price: 9500,
-    images: imageLibrary.iphone,
-    buyUrl: storeLinks.yagaStore,
-    description: "Boxed iPhone deal with a clean display and smooth performance.",
-    specs: ["Box included", "Screen checked", "Battery checked", "Network ready"]
-  },
-  {
-    id: "ipad-keyboard-case",
-    name: "iPad With Keyboard Case",
-    category: "iPad",
-    price: 3500,
-    images: imageLibrary.ipad,
-    buyUrl: storeLinks.yagaStore,
-    description: "iPad setup with a keyboard case for notes, work, and browsing.",
-    specs: ["Keyboard case", "Touch display", "Wi-Fi model", "Portable setup"]
-  },
-  {
-    id: "macbook-space-gray",
-    name: "MacBook Space Gray",
-    category: "MacBook",
-    price: 9500,
-    images: imageLibrary.macbook,
-    buyUrl: storeLinks.yagaStore,
-    description: "Space gray MacBook in a practical everyday configuration.",
-    specs: ["Space gray finish", "Charger available", "macOS ready", "Good working condition"]
-  },
-  {
-    id: "iphone-red",
-    name: "iPhone Red",
-    category: "iPhone",
-    price: 2500,
-    images: imageLibrary.iphone,
-    buyUrl: storeLinks.yagaStore,
-    description: "Affordable iPhone with a bold red finish and essential features.",
-    specs: ["Unlocked", "Charging tested", "Camera tested", "Great value option"]
-  },
-  {
-    id: "airpods-box",
-    name: "AirPods With Box",
-    category: "AirPods",
-    price: 450,
-    images: imageLibrary.airpods,
-    buyUrl: storeLinks.yagaStore,
-    description: "Compact Apple audio accessory for music, calls, and daily use.",
-    specs: ["Charging case", "Portable design", "Audio tested", "Box shown"]
-  },
-  {
-    id: "ipad-mini",
-    name: "iPad Mini",
-    category: "iPad",
-    price: 2900,
-    images: imageLibrary.ipad,
-    buyUrl: storeLinks.yagaStore,
-    description: "Small iPad form factor for travel, reading, video, and notes.",
-    specs: ["Compact size", "Wi-Fi model", "Touch display", "Easy to carry"]
-  },
-  {
-    id: "ipad-silver",
-    name: "iPad Silver",
-    category: "iPad",
-    price: 5500,
-    images: imageLibrary.ipad,
-    buyUrl: storeLinks.yagaStore,
-    description: "Silver iPad with a clean look and reliable everyday usability.",
-    specs: ["Silver finish", "Wi-Fi model", "Display tested", "Ready to use"]
-  },
-  {
-    id: "apple-pencil",
-    name: "Apple Pencil",
-    category: "Accessories",
-    price: 1100,
-    images: imageLibrary.accessories,
-    buyUrl: storeLinks.yagaStore,
-    description: "Apple Pencil accessory for drawing, notes, marking up, and design work.",
-    specs: ["Apple Pencil", "Clean condition", "Great for iPad", "Portable accessory"]
-  },
-  {
-    id: "iphone-apps",
-    name: "iPhone App Setup",
-    category: "iPhone",
-    price: 5900,
-    images: imageLibrary.iphone,
-    buyUrl: storeLinks.yagaStore,
-    description: "iPhone shown with apps installed, ready for everyday communication.",
-    specs: ["Unlocked", "Apps ready", "Screen checked", "Battery checked"]
+    description: "A gorgeous deep warm tint with deep structural plumping hydration.",
+    specs: ["Peptide enriched serum base", "Slight tingling sensation", "Sober elegant tone", "Moisture locking shield"]
   }
 ];
 
-// Formatting setup for regional settings
 const currency = new Intl.NumberFormat("en-ZA", {
   style: "currency",
   currency: "ZAR",
@@ -207,7 +70,7 @@ const currency = new Intl.NumberFormat("en-ZA", {
 });
 
 const state = {
-  cart: JSON.parse(localStorage.getItem("richendorCart") || "[]"),
+  cart: JSON.parse(localStorage.getItem("luxeglowCart") || "[]"),
   search: "",
   category: "all",
   sort: "featured",
@@ -215,7 +78,6 @@ const state = {
   activeImageIndex: 0
 };
 
-// Query Selector Elements
 const productGrid = document.querySelector("#productGrid");
 const categoryFilter = document.querySelector("#categoryFilter");
 const searchInput = document.querySelector("#searchInput");
@@ -228,7 +90,7 @@ const productDialog = document.querySelector("[data-product-dialog]");
 const productDetail = document.querySelector("[data-product-detail]");
 
 function saveCart() {
-  localStorage.setItem("richendorCart", JSON.stringify(state.cart));
+  localStorage.setItem("luxeglowCart", JSON.stringify(state.cart));
 }
 
 function formatPrice(value) {
@@ -275,13 +137,13 @@ function renderProducts() {
   });
 
   if (!visibleProducts.length) {
-    productGrid.innerHTML = '<div class="empty-state"><h3>No products found.</h3><p>Try a different search or category.</p></div>';
+    productGrid.innerHTML = '<div class="empty-state"><h3>No products found.</h3><p>Try a different search query or filter finish.</p></div>';
     return;
   }
 
   productGrid.innerHTML = visibleProducts.map((product) => `
     <article class="product-card">
-      <button class="product-media" type="button" data-view-product="${product.id}" aria-label="View ${product.name} photos">
+      <button class="product-media" type="button" data-view-product="${product.id}" aria-label="View ${product.name} details">
         <img src="${primaryImage(product)}" alt="${product.name}">
         <span class="save-dot" aria-hidden="true">&#9825;</span>
       </button>
@@ -306,7 +168,7 @@ function renderCart() {
   });
 
   if (!state.cart.length) {
-    cartItems.innerHTML = '<div class="empty-state"><h3>Your bag is empty.</h3><p>Pick products from the store grid.</p></div>';
+    cartItems.innerHTML = '<div class="empty-state"><h3>Your bag is empty.</h3><p>Select products from our catalog grid.</p></div>';
   } else {
     cartItems.innerHTML = state.cart.map((item) => {
       const product = getCartProduct(item);
@@ -317,7 +179,7 @@ function renderCart() {
           <div>
             <h3>${product.name}</h3>
             <p>${formatPrice(product.price)}</p>
-            <a href="${product.buyUrl}">Buy item</a>
+            <a href="${product.buyUrl}">View item link</a>
           </div>
           <button class="remove-x" type="button" data-remove="${product.id}" aria-label="Remove ${product.name}">&times;</button>
         </article>
@@ -397,7 +259,6 @@ function closeProductDialog() {
   document.body.classList.remove("dialog-open");
 }
 
-// Global Event Routing Interaction Observers
 document.addEventListener("click", (event) => {
   const addButton = event.target.closest("[data-add-to-cart]");
   const viewButton = event.target.closest("[data-view-product]");
@@ -452,7 +313,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Init Process Runtime loops
 renderCategories();
 renderProducts();
 renderCart();
