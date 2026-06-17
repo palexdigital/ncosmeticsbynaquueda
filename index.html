@@ -3,30 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Richendor General Trading | Apple Devices & Accessories</title>
-    <meta name="description" content="Shop Apple devices and accessories from Richendor General Trading. iPads, iPhones, MacBooks, AirPods, Apple Watch, and accessories.">
-    <link rel="icon" href="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300">
-    <link rel="apple-touch-icon" href="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300">
+    <title>LuxeGlow Cosmetics | Premium High-Shine Lip Finishes</title>
+    <meta name="description" content="Shop clean, ultra-hydrating premium lip glosses and nourishing lip oils for a high-shine mirror finish.">
+    <link rel="icon" href="https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=150&q=80">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <header class="global-header" aria-label="Main navigation">
       <nav class="nav-shell">
-        <a class="brand" href="#home" aria-label="Richendor General Trading home">
-          <img src="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300" alt="Richendor General Trading logo">
-          <span>Richendor General Trading</span>
+        <a class="brand" href="#home" aria-label="LuxeGlow Cosmetics home">
+          <img src="https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=150&q=80" alt="LuxeGlow Logo">
+          <span>LuxeGlow</span>
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle Navigation Menu">
           <span></span>
           <span></span>
         </button>
         <div class="nav-links" id="primary-nav">
-          <a href="#store">Products</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <button class="icon-button" type="button" data-open-search aria-label="Search products">⌕</button>
-          <button class="bag-button" type="button" data-open-cart aria-label="Open bag">
+          <a href="#store">The Collection</a>
+          <a href="#about">Our Formula</a>
+          <a href="#contact">Inquiries</a>
+          <button class="icon-button" type="button" data-open-search aria-label="Search Collection">⌕</button>
+          <button class="bag-button" type="button" data-open-cart aria-label="Open shopping bag">
             Bag <strong data-cart-count>0</strong>
           </button>
         </div>
@@ -36,43 +35,50 @@
     <main id="home">
       <section class="store-profile" aria-labelledby="profile-title">
         <div class="profile-logo">
-         <img src="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300" alt="Richendor General Trading">
+          <img src="https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=300&q=80" alt="LuxeGlow Collection Cover Image">
         </div>
         <div>
-          <p class="eyebrow">Richendor General Trading Online Store</p>
-          <h1 id="profile-title">Quality Apple devices, accessories, and everyday tech essentials.</h1>
-          <p>We specialise in offering high-quality pre-owned Apple products such as iPads, iPhones, MacBooks, Apple Watches, AirPods, and accessories at affordable prices.</p>
+          <p class="eyebrow">LuxeGlow Haute Cosmetics</p>
+          <h1 id="profile-title">High-shine formulas. Intensely hydrating. Lovingly crafted.</h1>
+          <p>Experience ultra-premium glass finishes without any of the stickiness. Infused with natural botanical oils to treat your lips with every single swipe.</p>
           <div class="profile-actions">
-            <a class="pill-button" href="#store">Shop products</a>
-            <a class="text-link" href="#contact">Contact store ›</a>
+            <a class="pill-button" href="#store">Shop The Collection</a>
+            <a class="text-link" href="#contact">Bespoke Inquiries ›</a>
           </div>
         </div>
       </section>
 
+      <div class="video-hero-container">
+        <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-putting-on-shiny-lip-gloss-41584-large.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <section class="store-section" id="store" aria-labelledby="store-title">
         <div class="section-heading">
-          <p class="eyebrow dark">Available products</p>
-          <h2 id="store-title">Browse the collection.</h2>
-          <p>Choose a product, save it to your bag, or open the item listing directly with Buy.</p>
+          <p class="eyebrow dark">Curated Luxury</p>
+          <h2 id="store-title">Drench your lips in luxury.</h2>
+          <p>Explore high-gloss finishes, shimmering top coats, and rich nourishing tint formulas tailored for every skin tone.</p>
         </div>
 
         <div class="toolbar" role="search">
           <label class="search-field">
             <span>Search</span>
-            <input type="search" id="searchInput" placeholder="Search iPad, iPhone, MacBook...">
+            <input type="search" id="searchInput" placeholder="Search Shade, Finish, Category...">
           </label>
           <label class="select-field">
             <span>Category</span>
             <select id="categoryFilter">
-              <option value="all">All products</option>
+              <option value="all">All Finishes</option>
             </select>
           </label>
           <label class="select-field">
             <span>Sort</span>
             <select id="sortFilter">
-              <option value="featured">Featured</option>
-              <option value="price-low">Price: low to high</option>
-              <option value="price-high">Price: high to low</option>
+              <option value="featured">Featured Collection</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
               <option value="name">Name</option>
             </select>
           </label>
@@ -83,20 +89,20 @@
 
       <section class="info-section" id="about" aria-labelledby="about-title">
         <div class="content-card">
-          <p class="eyebrow dark">Why shop with Richendor</p>
-          <h2 id="about-title">Practical devices. Clear pricing. Direct buying.</h2>
+          <p class="eyebrow dark">The LuxeGlow Standard</p>
+          <h2 id="about-title">Clean ingredients. Maximum radiance. Cruelty-free.</h2>
           <div class="benefit-grid">
             <article>
-              <strong>Apple-focused stock</strong>
-              <span>iPads, iPhones, MacBooks, watches, AirPods, chargers, and accessories.</span>
+              <strong>12-Hour Intense Hydration</strong>
+              <span>Infused with organic Jojoba and Vitamin E oils to continuously repair your skin barrier.</span>
             </article>
             <article>
-              <strong>Simple product links</strong>
-              <span>Every Buy button opens the matching product listing for a faster checkout path.</span>
+              <strong>Non-Sticky Glass Finish</strong>
+              <span>A refined, smooth formula built to offer an extreme mirror shine without any tackiness.</span>
             </article>
             <article>
-              <strong>Easy to update</strong>
-              <span>Fresh stock can be added quickly as new Apple products become available.</span>
+              <strong>Ethical & Cruelty Free</strong>
+              <span>Every single gloss batch is 100% vegan, ethically sourced, and certified cruelty-free.</span>
             </article>
           </div>
         </div>
@@ -104,14 +110,12 @@
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-heading compact">
-          <p class="eyebrow dark">Contact</p>
-          <h2 id="contact-title">Ready to buy or ask about stock?</h2>
-          <p>Send a message to confirm availability, condition, and delivery options before payment.</p>
+          <p class="eyebrow dark">Connect With Us</p>
+          <h2 id="contact-title">Need help finding your perfect shade?</h2>
+          <p>Drop our beauty concierges a quick message for personalized color matching or bulk order inquiries.</p>
           <div class="contact-actions">
-            <a class="pill-button" href="https://www.yaga.co.za/richendor-general-trading">Visit Yaga store</a>
-            <a class="pill-button muted" href="#contact-link-to-edit">Default contact</a>
-            <a class="pill-button" href="https://www.yaga.co.za/my/messages/orieukwu-richard">Send us a message</a>
-            <a class="text-link" href="#store">Continue shopping ›</a>
+            <a class="pill-button" href="#contact">Message Beauty Assistant</a>
+            <a class="text-link" href="#store">Continue Exploring ›</a>
           </div>
         </div>
       </section>
@@ -121,7 +125,7 @@
       <div class="cart-overlay" data-close-cart></div>
       <section class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
         <header>
-          <h2 id="cartTitle">Your bag</h2>
+          <h2 id="cartTitle">Your Selection</h2>
           <button class="icon-button" type="button" data-close-cart aria-label="Close bag">×</button>
         </header>
         <div class="cart-items" data-cart-items></div>
@@ -130,21 +134,20 @@
             <span>Total</span>
             <strong data-cart-total>R0</strong>
           </div>
-          <a class="pill-button cart-purchase" href="https://www.yaga.co.za/orieukwu-richard" data-purchase-button>Purchase</a>
+          <a class="pill-button cart-purchase" href="#" data-purchase-button>Secure Checkout</a>
         </footer>
       </section>
     </aside>
 
     <dialog class="product-dialog" data-product-dialog>
-      <button class="icon-button dialog-close" type="button" data-close-product aria-label="Close product details">×</button>
+      <button class="icon-button dialog-close" type="button" data-close-product aria-label="Close details">×</button>
       <div data-product-detail></div>
     </dialog>
 
     <footer class="site-footer">
       <div>
-        <strong>Richendor General Trading</strong>
-        <p>Apple, iPhone, iPad, MacBook, Apple Watch, and AirPods are trademarks of Apple Inc. Richendor General Trading is an independent reseller store.</p>
-        <a class="developer-credit" href="https://palexdigital.pages.dev/">Developed by paléXdigital</a>
+        <strong>LuxeGlow Cosmetics Corp.</strong>
+        <p>Elevating daily beauty rituals. All alternative rights reserved.</p>
       </div>
     </footer>
 
