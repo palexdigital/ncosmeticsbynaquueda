@@ -1,41 +1,40 @@
 :root {
-  /* Requested Base & Premium Complementary Palette */
-  --color-bg-pink: #f0c2ec;         /* Your custom background */
-  --color-brand: #4a1235;          /* Rich Luxury Plum Accent */
-  --color-brand-hover: #6e1d50;    /* Vibrant Berry interactive accent */
-  --color-space-black: #210718;    /* Dark off-black with a warm undertone */
-  --color-slate: #3b1e31;          /* Deep deep mauve */
-  --color-gunmetal: #573a4b;       /* Muted berry shadow */
-  --color-fog: #785a6c;            /* Elegant dark rose grey for text */
-  --color-pure-white: #ffffff;     /* Crisp white crisp pop */
-  --color-mist: #faf2f8;           /* Super soft tint for structural cards */
-  --color-silver: #e6cbdc;         /* Soft boundary line border accent */
-  --color-cloud: #ebd2e2;          /* Secondary interactive boundary */
+  /* Warm Premium Nudes & Chocolate Palette */
+  --color-brand: #1a1a1a;            /* Deep Jet Black for heavy editorial contrast */
+  --color-brand-hover: #4a3728;      /* Rich warm chocolate brown */
+  --color-space-black: #121212;      /* Midnight black for core text */
+  --color-slate: #574e47;            /* Deep taupe-brown */
+  --color-gunmetal: #7a6e65;         /* Muted earth gray for metadata */
+  --color-fog: #8c7e74;              /* Soft shadow gray */
+  --color-pure-white: #ffffff;       /* Pure white panels */
+  --color-mist: #fcf9f6;             /* Creamy warm sand background */
+  --color-silver: #e6dfd9;           /* Clean thin borders */
+  --color-cloud: #f3ede8;            /* Soft structural accents */
 
-  /* Serif fallback fonts to make cosmetics feel high fashion */
-  --font-sf-pro-text: "SF Pro Text", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Didot", "Playfair Display", serif;
-  --font-sf-pro-display: "SF Pro Display", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Didot", "Playfair Display", serif;
+  /* Modern high-end editorial typography */
+  --font-sf-pro-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  --font-sf-pro-display: "Didot", "Playfair Display", "SF Pro Display", serif;
   
   --text-caption: 12px;
   --leading-caption: 1.33;
   --text-body-sm: 14px;
   --leading-body-sm: 1.43;
-  --text-body: 17px;
-  --leading-body: 1.47;
-  --text-body-lg: 21px;
-  --leading-body-lg: 1.38;
-  --text-heading: 40px;
-  --leading-heading: 1.1;
-  --text-heading-lg: 48px;
-  --leading-heading-lg: 1.14;
+  --text-body: 16px;
+  --leading-body: 1.5;
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.4;
+  --text-heading: 38px;
+  --leading-heading: 1.15;
+  --text-heading-lg: 46px;
+  --leading-heading-lg: 1.12;
   --font-weight-regular: 400;
-  --font-weight-semibold: 600;
-  --page-max-width: 1120px;
-  --section-gap: 72px;
-  --card-padding: 40px;
-  --radius-nav: 12px;
-  --radius-cards: 20px;
-  --radius-inputs: 8px;
-  --radius-buttons: 980px;
-  --shadow-subtle: rgba(74, 18, 53, 0.08) 0px 8px 24px 0px;
+  --font-weight-semibold: 500;
+  --page-max-width: 1200px;
+  --section-gap: 84px;
+  --card-padding: 48px;
+  --radius-nav: 0px;
+  --radius-cards: 0px; /* Sharp, modern luxury borders */
+  --radius-inputs: 0px;
+  --radius-buttons: 0px;
+  --shadow-subtle: rgba(0, 0, 0, 0.04) 0px 4px 16px;
 }
