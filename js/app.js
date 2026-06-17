@@ -4,7 +4,6 @@ const storeLinks = {
   purchase: "https://www.instagram.com/ncosmeticsbynaquueda/"
 };
 
-// Premium high-res editable product photography array assignments
 const products = [
   {
     id: "nude-bomb-gloss",
@@ -13,7 +12,7 @@ const products = [
     price: 240,
     images: [
       "https://images.unsplash.com/photo-1617422275558-e5f6163026b4?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80" // Secondary angle slot
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80"
     ],
     buyUrl: storeLinks.yagaStore,
     description: "The crown jewel of our collection. A high-reflectance glass finish that cushions lips in comfortable warm nude hues.",
@@ -26,7 +25,7 @@ const products = [
     price: 260,
     images: [
       "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=900&q=80" // Swatch/packaging detail slot
+      "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=900&q=80"
     ],
     buyUrl: storeLinks.yagaStore,
     description: "Deep skin barrier conditioning layer that shifts with your natural pH level to form a bespoke blush finish.",
@@ -114,8 +113,8 @@ function renderProducts() {
       </button>
       
       <div class="image-slots-row">
-        <img class="slot-thumb" src="${product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[0]}'" alt="View 1">
-        <img class="slot-thumb" src="${product.images[1] || product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[1] || product.images[0]}'" alt="View 2">
+        <img class="slot-thumb" src="${product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[0]}'" alt="Thumbnail angle view 1">
+        <img class="slot-thumb" src="${product.images[1] || product.images[0]}" onclick="document.getElementById('main-img-${product.id}').src='${product.images[1] || product.images[0]}'" alt="Thumbnail angle view 2">
       </div>
 
       <div class="product-copy">
