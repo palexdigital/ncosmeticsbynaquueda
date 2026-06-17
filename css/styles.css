@@ -150,15 +150,46 @@ img {
   gap: 24px;
 }
 
-.hero-left-billboard {
-  background: #eddcd0;
+/* Container adjustment for stacking layers */
+.hero-left-billboard.video-bg-container {
+  position: relative;
+  overflow: hidden;
+  background: #000000; /* Dark baseline fill while video loads */
   padding: 80px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.hero-left-billboard h1 {
+/* Absolute video fit matching the frame aspect ratio cover */
+.billboard-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps aspect crop looking identical to a background image */
+  z-index: 1;
+}
+
+/* Luxury semi-dark overlay tint to make sure text remains highly readable over moving footage */
+.hero-left-billboard.video-bg-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* Tint adjustments depending on video brightness */
+  z-index: 2;
+}
+
+/* Push typography layers above background frames */
+.billboard-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Turn text to white so it contrasts beautifully against video motion graphics */
+.billboard-content h1 {
+  color: var(--color-pure-white);
   font-family: var(--font-sf-pro-display);
   font-size: clamp(38px, 4.2vw, 62px);
   line-height: 0.95;
@@ -168,9 +199,13 @@ img {
   letter-spacing: 0.08em;
 }
 
-.hero-left-billboard p {
+.billboard-content .eyebrow {
+  color: #e5ded7; /* Soft gold/silver hue tint for crisp readability */
+}
+
+.billboard-content .hero-desc {
   margin: 0 0 40px 0;
-  color: var(--color-slate);
+  color: #faf7f4; /* Muted clean white paragraph text */
   font-size: 15px;
   line-height: 1.7;
 }
