@@ -1,120 +1,416 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Richendor General Trading | Apple Devices & Accessories</title>
-    <meta name="description" content="Shop Apple devices and accessories from Richendor General Trading. iPads, iPhones, MacBooks, AirPods, Apple Watch, and accessories.">
-    <link rel="icon" href="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <header class="global-header" aria-label="Main navigation">
-      <nav class="nav-shell">
-        <a class="brand" href="#home" aria-label="Richendor General Trading home">
-          <img src="https://images.yaga.co.za/_user_profile_pictures/103038062-9581a8b725bf306a17b687b36f6ed419.jpeg?s=300" alt="Richendor General Trading logo">
-          <span>RICHENDOR</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle Navigation Menu">
-          <span></span><span></span>
-        </button>
-        <div class="nav-links" id="primary-nav">
-          <a href="#store">The Collection</a>
-          <a href="https://www.yaga.co.za/richendor-general-trading" target="_blank">Yaga Store</a>
-          <button class="icon-button" type="button" data-open-search aria-label="Search Collection">⌕</button>
-          <button class="bag-button" type="button" data-open-cart aria-label="Open bag">
-            Bag <strong data-cart-count>0</strong>
-          </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N. Cosmetics | Maximum Shine, Zero Stick</title>
+    <style>
+        /* --- GLOBAL STYLES & VARIABLES --- */
+        :root {
+            --bg-color: #ffe3ec;
+            --main-pink: #ff75a0;
+            --dark-pink: #f9387a;
+            --text-color: #4a1525;
+            --white: #ffffff;
+            --font-stack: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-stack);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* --- ANNOUNCEMENT BAR --- */
+        .announcement-bar {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 227, 236, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-pink);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-pink);
+            letter-spacing: -1px;
+            text-shadow: 2px 2px var(--white);
+        }
+
+        .cart-icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .cart-count {
+            background: var(--dark-pink);
+            color: var(--white);
+            border-radius: 50%;
+            padding: 2px 7px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: -10px;
+            right: -15px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            min-height: 70vh;
+            padding: 40px 20px;
+            background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,227,236,1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+            text-shadow: 3px 3px var(--white);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(249, 56, 122, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(249, 56, 122, 0.6);
+        }
+
+        /* --- PRODUCT SECTION --- */
+        .products-section {
+            padding: 60px 5%;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--main-pink);
+        }
+
+        .product-image-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* --- CART DRAWER SIDEBAR --- */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 200;
+            transition: right 0.3s ease;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--bg-color);
+        }
+
+        .cart-footer {
+            border-top: 2px solid var(--bg-color);
+            padding-top: 20px;
+        }
+
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 500px) {
+            .cart-drawer {
+                width: 100%;
+                right: -100%;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        🍒 FREE SHIPPING ON ALL ORDERS OVER $35! SHOP THE GLOSS NOW 🍒
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#shop">Shop All</a>
         </div>
-      </nav>
-    </header>
-
-    <main id="home">
-      <section class="hero-editorial-triple">
-        <div class="hero-left-billboard video-bg-container">
-          <video autoplay loop muted playsinline class="billboard-video-player">
-            <source src="https://lv-files.limewire.com/gNuN6/fmmprsN22W.mp4" type="video/mp4">
-            Your browser does not support HTML5 video tags.
-          </video>
-          
-          <div class="billboard-content">
-            <p class="eyebrow">YOUR NEW SIGNATURE FINISHES</p>
-            <h1>DEFINING CLEAN LUXURY BEAUTY.</h1>
-            <p class="hero-desc">Explore formulas intentionally created to provide extreme hydration, glass reflections, and effortless rich pigments all day long.</p>
-            <a class="pill-button" href="#store">Explore Collection</a>
-          </div>
+        <div class="logo">N. cosmetics</div>
+        <div>
+            <button class="cart-icon-btn" id="cart-btn">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </button>
         </div>
-        <div class="hero-right-gallery">
-          <img class="hero-gallery-img" src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80" alt="Premium Hardware Display One">
-          <img class="hero-gallery-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Premium Hardware Display Two">
-          <img class="hero-gallery-img span-two" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1120&q=80" alt="Studio Grid View Panel">
+    </nav>
+
+    <section class="hero">
+        <h1>Maximum Shine.<br>Zero Stick.</h1>
+        <p>Drench your lips in the juiciest, high-shine formulas designed to plump, hydrate, and turn heads all day long.</p>
+        <button class="btn" onclick="document.getElementById('shop').scrollIntoView({behavior: 'smooth'})">SHOP THE GLOSS 💋</button>
+    </section>
+
+    <section class="products-section" id="shop">
+        <h2 class="section-title">The Cherry Picked Best Sellers</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-placeholder">✨</div>
+                <h3>Glazed & Infused Lip Oil</h3>
+                <div class="product-price">$14.00</div>
+                <button class="btn" onclick="addToCart('Glazed & Infused Lip Oil', 14.00)">Add To Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-placeholder">🍒</div>
+                <h3>Cherry Bomb Plumper</h3>
+                <div class="product-price">$15.00</div>
+                <button class="btn" onclick="addToCart('Cherry Bomb Plumper', 15.00)">Add To Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-placeholder">💄</div>
+                <h3>Nude Illusion Gloss</h3>
+                <div class="product-price">$14.00</div>
+                <button class="btn" onclick="addToCart('Nude Illusion Gloss', 14.00)">Add To Cart</button>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section class="store-section" id="store" aria-labelledby="store-title">
-        <div class="section-heading">
-          <h2>THE CURATED COLLECTION</h2>
-          <p>Premium pre-owned Apple devices, accessories, and tech essentials at affordable prices.</p>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">✕</button>
         </div>
-
-        <div class="toolbar" role="search">
-          <label class="search-field">
-            <span>Search</span>
-            <input type="search" id="searchInput" placeholder="Search devices...">
-          </label>
-          <label class="select-field">
-            <span>Category</span>
-            <select id="categoryFilter">
-              <option value="all">All Items</option>
-            </select>
-          </label>
-          <label class="select-field">
-            <span>Sort By</span>
-            <select id="sortFilter">
-              <option value="featured">Featured Favorites</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="name">Product Name</option>
-            </select>
-          </label>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; color: gray; margin-top: 20px;">Your cart is empty.</p>
         </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%;" onclick="alert('Proceeding to checkout!')">Checkout Now</button>
+        </div>
+    </div>
 
-        <div class="product-grid" id="productGrid" aria-live="polite"></div>
-      </section>
-    </main>
-
-    <aside class="cart-panel" data-cart-panel aria-hidden="true">
-      <div class="cart-overlay" data-close-cart></div>
-      <section class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-        <header>
-          <h2 id="cartTitle">YOUR SELECTION</h2>
-          <button class="icon-button" type="button" data-close-cart>&times;</button>
-        </header>
-        <div class="cart-items" data-cart-items></div>
-        <footer class="cart-footer">
-          <div class="cart-total">
-            <span>Subtotal</span>
-            <strong data-cart-total>R0</strong>
-          </div>
-          <a class="pill-button cart-purchase" href="https://www.yaga.co.za/orieukwu-richard" data-purchase-button>Secure Checkout</a>
-        </footer>
-      </section>
-    </aside>
-
-    <dialog class="product-dialog" data-product-dialog>
-      <button class="icon-button dialog-close" type="button" data-close-product>&times;</button>
-      <div data-product-detail></div>
-    </dialog>
-
-    <footer class="site-footer">
-      <div>
-        <strong>Richendor General Trading</strong>
-        <p>Apple, iPhone, iPad, MacBook, Apple Watch, and AirPods are trademarks of Apple Inc. Richendor General Trading is an independent reseller store.</p>
-        <a class="developer-credit" href="https://palexdigital.pages.dev/" target="_blank">Developed by paleX</a>
-      </div>
+    <footer>
+        <p>© 2026 N. Cosmetics. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/app.js"></script>
-  </body>
+    <script>
+        let cart = [];
+        const cartBtn = document.getElementById('cart-btn');
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+
+        // Toggle Cart Drawer
+        cartBtn.addEventListener('click', () => cartDrawer.classList.add('open'));
+        closeCartBtn.addEventListener('click', () => cartDrawer.classList.remove('open'));
+
+        // Add item to cart
+        function addToCart(name, price) {
+            // Check if item already exists
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            cartDrawer.classList.add('open'); // Auto open cart when adding an item
+        }
+
+        // Update the Sidebar UI
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: gray; margin-top: 20px;">Your cart is empty.</p>';
+                cartCount.innerText = '0';
+                cartTotal.innerText = '$0.00';
+                return;
+            }
+
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <div>
+                        <strong>${item.name}</strong><br>
+                        <small>$${item.price.toFixed(2)} x ${item.quantity}</small>
+                    </div>
+                    <span style="font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            cartCount.innerText = totalItems;
+            cartTotal.innerText = `$${totalPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
 </html>
